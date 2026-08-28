@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivas's Personal Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tab Navigation Bar -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'home')">Home</button>
+        <button class="tab-btn" onclick="openTab(event, 'projects')">Projects</button>
+        <button class="tab-btn" onclick="openTab(event, 'hobbies')">Hobbies</button>
+        <button class="tab-btn" onclick="openTab(event, 'contact')">Contact</button>
+    </nav>
+
+    <div class="container">
+        <!-- Tab 1: Home -->
+        <div id="home" class="tab-content active">
+            <header class="hero">
+                <h1>Hi, I'm Srinivas! 👋</h1>
+                <p>Welcome to my personal corner of the internet. Explore the tabs above to see my work and interests.</p>
+            </header>
+            <section class="card">
+                <h2>About Me</h2>
+                <p>I am an enthusiastic developer learning front-end web development, building custom browser interfaces, and exploring new tech through [Hack Club](https://stardance.hackclub.com/missions/personal-page).</p>
+            </section>
+        </div>
+
+        <!-- Tab 2: Projects -->
+        <div id="projects" class="tab-content">
+            <section class="card">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <h3>EterniaOS</h3>
+                        <p>A custom browser-based desktop operating system interface built with vanilla HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Junior Scientists Track</h3>
+                        <p>Interactive science curricula and educational layouts for youth workshops.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 3: Hobbies -->
+        <div id="hobbies" class="tab-content">
+            <section class="card">
+                <h2>My Hobbies & Interests</h2>
+                <ul>
+                    <li>💻 Coding mini-applications and websites</li>
+                    <li>🌱 Caring for indoor plants (spider plants, coleus, and more)</li>
+                    <li>🚀 Tinkering with new developer tools and Git workflows</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Tab 4: Contact -->
+        <div id="contact" class="tab-content">
+            <section class="card">
+                <h2>Get in Touch</h2>
+                <p>Want to connect or check out my code repositories? Reach out via GitHub!</p>
+                <a href="https://github.com" target="_blank" class="contact-btn">Visit GitHub</a>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle Switching Tabs Smoothly -->
+    <script>
+        function openTab(evt, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
